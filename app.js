@@ -1,3 +1,5 @@
+const {log, error} = require('console');
+
 require('dotenv').config();
 
 var Twitter = require('twitter');
@@ -18,6 +20,8 @@ var params = {
   result_type: 'recent',
   lang: 'en'
 }
+
+log('bot started...\n');
 
 function like() {
 
@@ -52,7 +56,7 @@ function like() {
       }
 
     } else {
-      console.log(err);
+      RangeError(err);
     }
   })
 
