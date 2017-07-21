@@ -53,6 +53,20 @@ function like() {
               }
             });
 
+          } else {
+            
+            T.post('favorites/create', id, function(err, response){
+        // If the favorite fails, log the error message
+              if(err){
+                return;
+              }
+              // If the favorite is successful, log the url of the tweet
+              else{
+                let username = response.user.screen_name;
+                let tweetId = response.id_str;
+                log('Favorited: ', `https://twitter.com/${username}/status/${tweetId}`)
+              }
+            });
           }
 
         }
