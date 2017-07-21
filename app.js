@@ -32,8 +32,6 @@ function like() {
     T.get('search/tweets', params, function(err, data, response) {
       if(!err){
         
-        // Loop through the returned tweets
-        //for(let i = 0; i < data.statuses.length; i++){
         for ( let tweet of data.statuses ) {
           // Get the tweet Id from the returned data
           let id = { id: tweet.id_str }
