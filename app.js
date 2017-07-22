@@ -41,8 +41,8 @@ async function like() {
 
       let params = {
         q: search.q,
-        count: 5,
-        result_type: 'recent',
+        count: 10,
+        result_type: 'popular',
         lang: 'en'
       };
 
