@@ -111,7 +111,7 @@ function run() {
 };
 
 
-mongoose.connect(mongo.uri)
+mongoose.connect(mongo.uri, { useMongoClient: true })
   .then(() => {
 
     log('Connection to %s open.', mongo.uri);
