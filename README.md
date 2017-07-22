@@ -7,7 +7,7 @@ Based on [Build a simple twitter bot..](https://codeburst.io/build-a-simple-twit
 
 Requires an instance of Mongodb running.
 
-Create a twitter app at (https://apps.twitter.com/).
+Create a twitter app at https://apps.twitter.com/.
 
 ## Install
 

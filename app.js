@@ -85,7 +85,7 @@ async function like() {
           let tweetId = post.id_str;
           log('retweeted: ', `https://twitter.com/${username}/status/${tweetId}`)
 
-        } else {
+        }/* else {
 
           log(`post: favorites/create ${id}`);
           let post = await T.post('favorites/create', id);
@@ -95,7 +95,7 @@ async function like() {
           let tweetId = post.id_str;
           log('Favorited: ', `https://twitter.com/${username}/status/${tweetId}`)
 
-        }
+        }*/
       }
     }
 
