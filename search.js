@@ -18,19 +18,19 @@ module.exports = [
        q: 'from googlemaps filter:links',
        limit: 20
     }, {
-       q: '#maps filter:media OR map filter:media',
+       q: '#maps -filter:retweets filter:media OR #map filter:media',
        limit: 50
     }, {
-        q: 'ethereum filter:links',
+        q: 'ethereum -filter:retweets filter:links',
         limit: 100
     }, {
-        q: '#blockchain filter:links',
+        q: '#blockchain -filter:retweets filter:links',
         limit: 100
     }, {
-        q: '#deeplearning filter:links',
+        q: '#deeplearning -filter:retweets filter:links',
         limit: 100
     }, {
-        q: '#nodejs filter:links',
+        q: '#nodejs -filter:retweets filter:links',
         limit: 100
     }, {
         q: '#golang filter:links',
@@ -39,10 +39,10 @@ module.exports = [
         q: '#TensorFlow  filter:links',
         limit: 100
     }, {
-        q: '#kaggle  filter:links',
+        q: '#kaggle filter:links',
         limit: 50
     }, {
-        q: 'MachineLearning filter:links',
+        q: '#machinelearning -filter:retweetsfilter:links',
         limit: 100
     }
 ];
