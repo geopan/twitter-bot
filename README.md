@@ -1,17 +1,24 @@
 # twitter-bot
-A little experiment Twitter bot..
+A little Twitter bot experiment.
 
 Based on [Build a simple twitter bot..](https://codeburst.io/build-a-simple-twitter-bot-with-node-js-in-just-38-lines-of-code-ed92db9eb078)
 
+## Requirements
+
+This library requires Node.js >= 7.10.1
+
 ## Dependencies
 
-Requires an instance of Mongodb running.
-
-Create a twitter app at https://apps.twitter.com/.
+* [MongoDB](https://www.mongodb.com/)
+* [A valid twitter app](https://apps.twitter.com/)
 
 ## Install
 
-Create a `.env` following the example of `.env_sample`.
+Create a `.env` based `.env_sample` and add your twitter app details.
 
 `npm install && node app.js`
+
+License
+
+Licensed under MIT License. © Guillaume de Boyer.
 
