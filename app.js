@@ -80,7 +80,7 @@ async function like() {
           T.post('statuses/retweet', id).then(data => {
             log(`POST statuses/retweet/${id}`);
           }).catch(err => {
-            log(err);
+            error(err);
           });
         }
       }
