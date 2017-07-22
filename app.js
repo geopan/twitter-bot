@@ -42,12 +42,11 @@ async function like() {
       let params = {
         q: search.q,
         count: 20,
-        //result_type: 'popular',
         lang: 'en'
       };
 
       log(`GET search/tweets ${params.q}`);
-      let tweetResponse = await T.get('search/tweets', params); //, async function(err, data, response) {
+      let tweetResponse = await T.get('search/tweets', params);
 
       for (let tweet of tweetResponse.statuses) {
 
@@ -84,20 +83,8 @@ async function like() {
             error(err);
           });
         }
-        /* else {
-
-                  log(`post: favorites/create ${id}`);
-                  let post = await T.post('favorites/create', id);
-
-                  await tt.save();
-                  let username = post.user.screen_name;
-                  let tweetId = post.id_str;
-                  log('Favorited: ', `https://twitter.com/${username}/status/${tweetId}`)
-
-                }*/
       }
     }
-
 
   } catch (err) {
     error(err);

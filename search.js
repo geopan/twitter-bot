@@ -14,6 +14,9 @@ module.exports = [
        q: 'from googlemaps filter:links',
        limit: 20
     }, {
+       q: '#maps filter:media OR map filter:media',
+       limit: 50
+    }, {
         q: 'ethereum filter:links',
         limit: 100
     }, {
