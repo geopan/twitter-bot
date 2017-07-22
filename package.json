@@ -18,6 +18,8 @@
   "homepage": "https://github.com/geopan/twitter-bot#readme",
   "dependencies": {
     "dotenv": "^4.0.0",
+    "instagram-node": "^0.5.8",
+    "mongoose": "^4.11.3",
     "twitter": "^1.7.1"
   }
 }
