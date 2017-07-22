@@ -41,12 +41,12 @@ async function like() {
 
       let params = {
         q: search.q,
-        count: 10,
-        result_type: 'popular',
+        count: 20,
+        //result_type: 'popular',
         lang: 'en'
       };
 
-      log(`get: search/tweets ${params.q}`);
+      log(`GET search/tweets ${params.q}`);
       let tweetResponse = await T.get('search/tweets', params); //, async function(err, data, response) {
 
       for (let tweet of tweetResponse.statuses) {
@@ -61,7 +61,7 @@ async function like() {
         });
 
         if (check) {
-          log(`${id} already processed`);
+          log(`#${tweet.id_str} already processed`);
           continue;
         }
 
@@ -77,25 +77,24 @@ async function like() {
         } = tweet;
 
         if (tweet.retweet_count > search.limit) {
-          log(`post: statuses/retweet ${id}`);
-          let post = await T.post('statuses/retweet', id);
-
           await tt.save();
-          let username = post.user.screen_name;
-          let tweetId = post.id_str;
-          log('retweeted: ', `https://twitter.com/${username}/status/${tweetId}`)
+          T.post('statuses/retweet', id).then(data => {
+            log(`POST statuses/retweet/${id}`);
+          }).catch(err => {
+            error(err);
+          });
+        }
+        /* else {
 
-        }/* else {
+                  log(`post: favorites/create ${id}`);
+                  let post = await T.post('favorites/create', id);
 
-          log(`post: favorites/create ${id}`);
-          let post = await T.post('favorites/create', id);
+                  await tt.save();
+                  let username = post.user.screen_name;
+                  let tweetId = post.id_str;
+                  log('Favorited: ', `https://twitter.com/${username}/status/${tweetId}`)
 
-          await tt.save();
-          let username = post.user.screen_name;
-          let tweetId = post.id_str;
-          log('Favorited: ', `https://twitter.com/${username}/status/${tweetId}`)
-
-        }*/
+                }*/
       }
     }
 
@@ -111,7 +110,9 @@ function run() {
 };
 
 
-mongoose.connect(mongo.uri, { useMongoClient: true })
+mongoose.connect(mongo.uri, {
+    useMongoClient: true
+  })
   .then(() => {
 
     log('Connection to %s open.', mongo.uri);

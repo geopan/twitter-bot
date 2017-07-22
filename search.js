@@ -8,6 +8,12 @@ module.exports = [
         q: '#geospatial -esri -filter:retweets filter:links',
         limit: 20
     }, {
+        q: 'from:Mapbox -esri -filter:retweets filter:links',
+        limit: 20
+    }, {
+       q: 'from googlemaps filter:links',
+       limit: 20
+    }, {
         q: 'ethereum filter:links',
         limit: 100
     }, {
