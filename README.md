@@ -14,11 +14,10 @@ This library requires Node.js >= 7.10.1
 
 ## Install
 
-Create a `.env` based `.env_sample` and add your twitter app details.
+1. Create a `.env` based `.env_sample` and add your twitter app details.
+2. Run `npm install && node app.js`
 
-`npm install && node app.js`
-
-License
+## License
 
 Licensed under MIT License. © Guillaume de Boyer.
 

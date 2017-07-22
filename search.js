@@ -1,14 +1,18 @@
 'use strict';
 
+// List of the topic and user for Twitter GET/search
+
 module.exports = [
     {
-        q: '#gis -esri -filter:retweets filter:links',
+        // #gis without the word esri including a link
+        q: '#gis -esri filter:links',
         limit: 20
     }, {
-        q: '#geospatial -esri -filter:retweets filter:links',
+        q: '#geospatial -esri filter:links',
         limit: 20
     }, {
-        q: 'from:Mapbox -esri -filter:retweets filter:links',
+        // Tweet from mapbox without the word esri including a link
+        q: 'from:Mapbox -esri filter:links',
         limit: 20
     }, {
        q: 'from googlemaps filter:links',
