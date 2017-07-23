@@ -78,7 +78,7 @@ async function like() {
         if (tweet.retweet_count > search.limit) {
           await tt.save();
           T.post('statuses/retweet', id).then(data => {
-            log(`POST statuses/retweet/${id}`);
+            log(`POST statuses/retweet/${id.id}`);
           }).catch(err => {
             error(err);
           });

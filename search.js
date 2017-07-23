@@ -42,7 +42,7 @@ module.exports = [
         q: '#kaggle filter:links',
         limit: 50
     }, {
-        q: '#machinelearning -filter:retweetsfilter:links',
+        q: '#machinelearning -filter:retweets filter:links',
         limit: 100
     }
 ];
